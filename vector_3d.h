@@ -1,17 +1,17 @@
 #ifndef VECTOR_3D_H
 #define VECTOR_3D_H
 
-struct vector_3d
+typedef struct vector_3d
 {
     float x;
     float y;
     float z;
-};
+} vector_3d_t;
 
-struct vector_3d sum(struct vector_3d a, struct vector_3d b);
-struct vector_3d sub(struct vector_3d a, struct vector_3d b);
-float dot(struct vector_3d a, struct  vector_3d b);
-struct vector_3d cros( struct vector_3d a, struct  vector_3d b);
+void vector_sum(const vector_3d_t* a, const vector_3d_t* b, vector_3d_t* out);
+void vector_sub(const vector_3d_t* a, const vector_3d_t* b, vector_3d_t* out);
+float vector_dot(const vector_3d_t* a, const vector_3d_t* b);
+void vector_cros(const vector_3d_t* a, const vector_3d_t* b, vector_3d_t* out);
 
 
 #endif

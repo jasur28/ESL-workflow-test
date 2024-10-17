@@ -2,23 +2,21 @@
 #include "vector_3d.h"
 
 int main() {
-    struct vector_3d a={2.0,3.0,4.0};
-    struct vector_3d b = {4.0, 5.0, 6.0};
+    vector_3d_t a = {2.0, 3.0, 4.0};
+    vector_3d_t b = {4.0, 5.0, 6.0};
+    vector_3d_t result;
     
-    struct vector_3d result;
-    
-    result=sub(a,b);
+    vector_sub(&a,&b,&result);
     printf("Sub: %f, %f, %f\n", result.x, result.y, result.z);
     
-    result=sum(a,b);
+    vector_sum(&a,&b,&result);
     printf("Sum: %f, %f, %f\n", result.x, result.y, result.z);
     
-    result=cros(a,b);
+    vector_cros(&a,&b,&result);
     printf("Cros: %f, %f, %f\n", result.x, result.y, result.z);
     
-    float res=dot(a,b);
+    float res=vector_dot(&a,&b);
     printf("Dot : %f\n", res);
-    
     
     return 0;
 }

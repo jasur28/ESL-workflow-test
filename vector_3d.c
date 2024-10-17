@@ -1,36 +1,24 @@
 #include "vector_3d.h"
 
-struct vector_3d sum(struct vector_3d a, struct vector_3d b)
+void vector_sum(const vector_3d_t *a, const vector_3d_t *b, vector_3d_t *out)
 {
-    struct vector_3d result;
-    result.x=a.x+b.x;
-    result.y=a.y+b.y;
-    result.z=a.z+b.z;
-    return result;
+    out->x=a->x+b->x;
+    out->y=a->y+b->y;
+    out->z=a->z+b->z;
 }
-struct vector_3d sub(struct vector_3d a, struct vector_3d b)
+void vector_sub(const vector_3d_t* a, const vector_3d_t* b, vector_3d_t* out)
 {
-    struct vector_3d result;
-    result.x=a.x-b.x;
-    result.y=a.y-b.y;
-    result.z=a.z-b.z;
-    return result;
+    out->x=a->x-b->x;
+    out->y=a->y-b->y;
+    out->z=a->z-b->z;
 }
-float dot(struct vector_3d a, struct vector_3d b)
+float vector_dot(const vector_3d_t* a, const vector_3d_t* b)
 {
-    struct vector_3d result;
-    result.x=a.x*b.x;
-    result.y=a.y*b.y;
-    result.z=a.z*b.z;
-    
-    return result.x+result.y+result.z;
+    return a->x*b->x+a->y*b->y+a->z*b->z;
 }
-struct vector_3d cros(struct vector_3d a, struct vector_3d b)
+void vector_cros(const vector_3d_t* a, const vector_3d_t* b, vector_3d_t* out)
 {
-    struct vector_3d result;
-    result.x=a.y*b.z-a.z*b.y;
-    result.y=a.z*b.x-a.x*b.z;
-    result.z=a.x*b.y-a.y*b.x;
-    
-    return result;
+    out->x=a->y*b->z-a->z*b->y;
+    out->y=a->z*b->x-a->x*b->z;
+    out->z=a->x*b->y-a->y*b->x;
 }
